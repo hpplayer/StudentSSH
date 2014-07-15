@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>我操他妈大爷管理系统首页</title>
+<title>湖北工程学院学生管理系统首页</title>
 </head>
 <body>
 	<center>
