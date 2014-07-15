@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 	hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bean">
+	<class name="Course" table="course">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="cid"></property>
+		<property name="cname"></property>
+		<property name="kkxq"></property>
+		<property name="xs"></property>
+		<property name="xf"></property>
+	</class>
+</hibernate-mapping>

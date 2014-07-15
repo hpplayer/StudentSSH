@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation //DTD Struts Configuration 2.0//EN"
+"resources/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="gbk"></constant>
+
+	<package name="student" extends="struts-default">
+		<action name="Login" class="action.Login">
+			<result name="success">/index.jsp</result>
+			<result name="error">/loginFail.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+	</package>
+	<package name="studentPrivilege" extends="struts-default">
+		<interceptors>
+			<interceptor name="privilege" class="interceptor.PrivilegeInterceptor"></interceptor>
+			<interceptor-stack name="studentDefault">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="privilege"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="studentDefault"></default-interceptor-ref>
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<action name="AddStudent" class="action.AddStudent">
+			<result name="success">/addStudentSuccess.jsp</result>
+			<result name="error">/addStudentFail.jsp</result>
+			<result name="input">/addStudent.jsp</result>
+		</action>
+		<action name="ViewStudents" class="action.ViewStudents">
+			<result name="success">/viewStudents.jsp</result>
+			<result name="error">/viewStudentsFail.jsp</result>
+		</action>
+		<action name="ModifyStudent" class="action.ModifyStudent">
+			<result name="success">/modifyStudent.jsp</result>
+			<result name="error">/modifyStudentFail.jsp</result>
+		</action>
+		<action name="ModifyStudent1" class="action.ModifyStudent1">
+			<result name="success">/modifyStudent1.jsp</result>
+			<result name="error">/modifyStudent1Fail.jsp</result>
+			<result name="input">modifyStudent.jsp</result>
+		</action>
+		<action name="DeleteStudent" class="action.DeleteStudent">
+			<result name="success">/DeleteStudentSuccess.jsp</result>
+			<result name="error">/DeleteStudentFail.jsp</result>
+		</action>
+		<action name="AddCourse" class="action.AddCourse">
+			<result name="success">/addCourseSuccess.jsp</result>
+			<result name="error">/addCourseFail.jsp</result>
+			<result name="input">/addCourse.jsp</result>
+		</action>
+		<action name="ViewCourses" class="action.ViewCourses">
+			<result name="success">/viewCourses.jsp</result>
+			<result name='error'>/viewCoursesFail.jsp</result>
+		</action>
+		<action name="ModifyCourse" class="action.ModifyCourse">
+			<result name='success'>/modifyCourse.jsp</result>
+			<result name="error">/modifyCourseFail.jsp</result>
+		</action>
+		<action name="ModifyCourse1" class="action.ModifyCourse1">
+			<result name="success">/modifyCourseSuccess.jsp</result>
+			<result name="error">/modifyCourse1Fail.jsp</result>
+			<result name="input">/modifyCourse.jsp</result>
+		</action>
+		<action name="DeleteCourse" class="action.DeleteCourse">
+			<result name="success">/deleteCourseSuccess.jsp</result>
+			<result name="error">/deleteCourseFail.jsp</result>
+		</action>
+		<action name="AddTeacher" class="action.AddTeacher">
+			<result name="success">/addTeacherSuccess.jsp</result>
+			<result name="error">/addTeacherFail.jsp</result>
+			<result name="input">/addTeacher.jsp</result>
+		</action>
+		<action name="ViewTeachers" class="action.ViewTeachers">
+			<result name="success">/viewTeachers.jsp</result>
+			<result name="error">/viewTeachersFail.jsp</result>
+		</action>
+		<action name="ModifyTeacher" class="action.ModifyTeacher">
+			<result name="success">/modifyTeacher.jsp</result>
+			<result name="error">/modifyTeacherFail.jsp</result>
+		</action>
+
+		<action name="ModifyTeacher1" class="action.ModifyTeacher1">
+			<result name="success">/modifyTeacherSuccess.jsp</result>
+			<result name='error'>/modifyTeacher1Fail.jsp</result>
+			<result name="input">/modifyTeacher.jsp</result>
+		</action>
+
+		<action name="DeleteTeacher" class="action.DeleteTeacher">
+			<result name="success">/deleteTeacherSuccess.jsp</result>
+			<result name="error">/deleteTeacherFail.jsp</result>
+		</action>
+	</package>
+</struts>
